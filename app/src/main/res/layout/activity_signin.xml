@@ -14,7 +14,7 @@
         android:layout_below="@+id/textView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="31dp"
-        android:hint="Email"
+        android:hint="Account no."
         android:inputType="textEmailAddress"
         android:paddingLeft="10dp" />
 

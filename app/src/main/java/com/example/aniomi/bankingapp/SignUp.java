@@ -1,10 +1,13 @@
 package com.example.aniomi.bankingapp;
 
+import android.content.DialogInterface;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -45,21 +48,41 @@ public class SignUp extends AppCompatActivity {
         t4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int a=mp[0].a;
-                int b=mp[0].b;
-                String name=t1.getText().toString();
-                String vid=t2.getText().toString();
-                String p=t5.getText().toString();
-                int balance=Integer.parseInt(t3.getText().toString());
-                int genid=10000000+a*1000+b;
-                DatabaseReference dataus=FirebaseDatabase.getInstance().getReference().child("Users");
-                DatabaseReference ds=dataus.push();
-                Users temp=new Users(genid+"",p,vid,name,ds.getKey()+"",balance);
-                ds.setValue(temp);
-                mp[0].a++;
-                mp[0].b++;
-                dataus=FirebaseDatabase.getInstance().getReference().child("Hash");
-                dataus.child(mp[0].resid).setValue(mp[0]);
+                if(t1.getText().toString().equals("") || t2.getText().toString().equals("") || t3.getText().toString().equals("")
+                        || t5.getText().toString().equals(""))
+                {
+                    Toast.makeText(getApplicationContext(), "Yo have to fill all the fields", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    int a = mp[0].a;
+                    int b = mp[0].b;
+                    String name = t1.getText().toString();
+                    String vid = t2.getText().toString();
+                    String p = t5.getText().toString();
+                    int balance = Integer.parseInt(t3.getText().toString());
+                    int genid = 10000000 + a * 1000 + b;
+                    DatabaseReference dataus = FirebaseDatabase.getInstance().getReference().child("Users");
+                    DatabaseReference ds = dataus.push();
+                    Users temp = new Users(genid + "", p, vid, name, ds.getKey() + "", balance);
+                    ds.setValue(temp);
+                    final AlertDialog.Builder a_buider = new AlertDialog.Builder(SignUp.this);
+
+                    a_buider.setMessage("Your Account Number is : " + genid);
+                    a_buider.setCancelable(false);
+                    a_buider.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.cancel();
+                        }
+                    });
+                    AlertDialog alert = a_buider.create();
+                    alert.setTitle("A/C no.");
+                    alert.show();
+                    mp[0].a++;
+                    mp[0].b++;
+                    dataus = FirebaseDatabase.getInstance().getReference().child("Hash");
+                    dataus.child(mp[0].resid).setValue(mp[0]);
+                }
             }
         });
     }

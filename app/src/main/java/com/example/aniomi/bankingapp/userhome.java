@@ -61,7 +61,7 @@ public class userhome extends AppCompatActivity {
         t5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(userhome.this,Depositmoney.class);
+                Intent intent = new Intent(userhome.this,Transictionss.class);
                 startActivity(intent);
 
             }

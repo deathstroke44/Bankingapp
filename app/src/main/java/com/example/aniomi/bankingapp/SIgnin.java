@@ -57,19 +57,25 @@ public class SIgnin extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 boolean flag=false;
-                String uid=t1.getText().toString(),p=t2.getText().toString();
-                for(int i=0;i<arrayList.size();i++)
+                if(t1.getText().toString().equals("") || t2.getText().toString().equals(""))
                 {
-                    if(arrayList.get(i).acno.equals(uid) && arrayList.get(i).pass.equals(p)) {
-                        flag=true;
-                        MainActivity.currentuser=arrayList.get(i);
-                        Intent intent = new Intent(SIgnin.this,userhome.class);
-                        startActivity(intent);
-                        finish();
-                        break;
-                    }
+                    Toast.makeText(getApplicationContext(), "Yo have to fill all the fields", Toast.LENGTH_SHORT).show();
                 }
-                if(!flag) Toast.makeText(SIgnin.this, "Wrong userid or password", Toast.LENGTH_LONG).show();
+                else {
+                    String uid = t1.getText().toString(), p = t2.getText().toString();
+                    for (int i = 0; i < arrayList.size(); i++) {
+                        if (arrayList.get(i).acno.equals(uid) && arrayList.get(i).pass.equals(p)) {
+                            flag = true;
+                            MainActivity.currentuser = arrayList.get(i);
+                            Intent intent = new Intent(SIgnin.this, userhome.class);
+                            startActivity(intent);
+                            finish();
+                            break;
+                        }
+                    }
+                    if (!flag)
+                        Toast.makeText(SIgnin.this, "Wrong userid or password", Toast.LENGTH_LONG).show();
+                }
             }
         });
         t4.setOnClickListener(new View.OnClickListener() {
