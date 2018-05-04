@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.aniomi.bankingapp.TransferFund">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Transfer Fund"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:layout_marginTop="70dp"
+        android:textSize="20dp"
+        android:id="@+id/dd"
+        />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:hint="Amount"
+            android:id="@+id/t1"/>
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/t1"
+            android:id="@+id/t2"
+            android:hint="Pssword"
+            android:inputType="textPassword"/>
+        <EditText
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+
+            android:hint="Receiver A/C"
+            android:id="@+id/t3"
+            android:layout_below="@id/t2"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/t3"
+            android:text="Transfer"
+            android:id="@+id/t4"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

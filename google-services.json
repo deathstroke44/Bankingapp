@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "836362494542",
+    "firebase_url": "https://bankingapp-80df5.firebaseio.com",
+    "project_id": "bankingapp-80df5",
+    "storage_bucket": "bankingapp-80df5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836362494542:android:4b9c92d6b3afdbcc",
+        "android_client_info": {
+          "package_name": "com.example.aniomi.bankingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "836362494542-je9v81h5bhl8g1qlg8jajn9qb7dqo6r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJtKY0XU5vZ4SUFK3skkCW4bC0Lu8VRkI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
